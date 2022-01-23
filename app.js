@@ -27,7 +27,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 mongoose.connect(
-	`mongodb+srv://admin-phumlani:${process.env.DB_PSWD}@cluster0.jt1kf.mongodb.net/secrets?retryWrites=true&w=majority`,
+	`mongodb://${process.env.DB_ADMIN}:${process.env.DB_PSWD}@cluster0-shard-00-00.jt1kf.mongodb.net:27017,cluster0-shard-00-01.jt1kf.mongodb.net:27017,cluster0-shard-00-02.jt1kf.mongodb.net:27017/secrets?ssl=true&replicaSet=atlas-pcbgx0-shard-0&authSource=admin&retryWrites=true&w=majority`,
 	{
 		useNewUrlParser: true,
 	}
